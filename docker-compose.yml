@@ -18,7 +18,7 @@ services:
     image: nginx:alpine
     container_name: calculator-proxy
     ports:
-      - "80:80"
+      - "8090:80"
     depends_on:
       calculator:
         condition: service_healthy
