@@ -4,7 +4,7 @@ pipeline {
     environment {
         IMAGE = "jitin1975/calculator-devops"
         REGISTRY_CREDS = "dockerhub"
-        NOTIFY_EMAIL = "jitinvenkatasaik2006@gmail.com"
+        NOTIFY_EMAIL = "ghost050906@gmail.com"
     }
 
     options {
@@ -56,8 +56,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'docker compose pull || true'
-                sh 'docker compose up -d'
+                sh 'docker-compose pull || true'
+                sh 'docker-compose up -d'
                 sh '''
                     echo "Waiting for the API to report healthy..."
                     for i in $(seq 1 15); do
